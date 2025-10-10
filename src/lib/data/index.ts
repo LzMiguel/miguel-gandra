@@ -1,0 +1,6 @@
+export { personalInfo } from './personal-info'
+export { experiences } from './experiences'
+export { education } from './education'
+export { courses } from './courses'
+export { projects } from './projects'
+export { codeSnippets } from './code-snippets'
