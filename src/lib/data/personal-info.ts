@@ -8,7 +8,7 @@ export const personalInfo: PersonalInfo = {
   bio: 'Desenvolvedor e Cientista de Dados especializado em automação de processos, análise de riscos empresariais e desenvolvimento de soluções inovadoras. Com experiência sólida em VBA, Excel, análise de dados e auditoria interna, transformo dados em insights acionáveis para impulsionar o crescimento dos negócios.',
   avatar: '/avatar.jpg',
   socialLinks: {
-    github: 'https://github.com/miguelgandra',
+    github: 'https://github.com/LzMiguel',
     linkedin: 'https://linkedin.com/in/miguelgandra',
   },
 }

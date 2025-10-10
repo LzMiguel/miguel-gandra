@@ -8,6 +8,13 @@ import {
 } from '@/components/ui/Card'
 import { personalInfo } from '@/lib/data'
 import { Mail, MapPin, Github, Linkedin, MessageCircle } from 'lucide-react'
+import { generatePageMetadata } from '@/lib/metadata'
+
+export const metadata = generatePageMetadata(
+  'Contato',
+  'Entre em contato para discutir projetos, colaborações ou oportunidades em desenvolvimento e ciência de dados.',
+  '/contact'
+)
 
 export default function ContactPage() {
   return (

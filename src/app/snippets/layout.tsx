@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
-import { SnippetsClient } from './SnippetsClient'
 
 export const metadata: Metadata = generatePageMetadata(
   'Code Snippets',
@@ -8,6 +7,10 @@ export const metadata: Metadata = generatePageMetadata(
   '/snippets'
 )
 
-export default function SnippetsPage() {
-  return <SnippetsClient />
+export default function SnippetsLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return <>{children}</>
 }

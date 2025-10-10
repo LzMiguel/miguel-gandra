@@ -4,6 +4,7 @@ import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
 import { personalInfo } from '@/lib/data'
+import Link from 'next/link'
 
 export function HeroSection() {
   const scrollToNext = () => {
@@ -95,16 +96,26 @@ export function HeroSection() {
             <Button
               size="lg"
               className="group"
+              asChild
             >
-              Ver meus projetos
-              <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+              <Link href="/projects">
+                Ver meus projetos
+                <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+              </Link>
             </Button>
             <Button
               variant="outline"
               size="lg"
+              asChild
             >
-              <Download className="mr-2 h-4 w-4" />
-              Download CV
+              <a
+                href="/cv-luiz-miguel.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </a>
             </Button>
           </div>
 

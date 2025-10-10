@@ -17,6 +17,13 @@ import {
   GraduationCap,
   Briefcase,
 } from 'lucide-react'
+import { generatePageMetadata } from '@/lib/metadata'
+
+export const metadata = generatePageMetadata(
+  'Sobre',
+  'Conheça minha trajetória profissional, formação acadêmica e experiências em desenvolvimento, ciência de dados e análise de riscos.',
+  '/about'
+)
 
 export default function AboutPage() {
   return (

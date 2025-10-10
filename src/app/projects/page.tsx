@@ -2,197 +2,203 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
-import { experiences, education, courses, personalInfo } from '@/lib/data'
-import { formatDateRange, formatDate } from '@/lib/utils'
-import {
-  Download,
-  MapPin,
-  Calendar,
-  Award,
-  GraduationCap,
-  Briefcase,
-} from 'lucide-react'
+import { Badge } from '@/components/ui/Badge'
+import { projects } from '@/lib/data'
+import { Github, ExternalLink, Star } from 'lucide-react'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export default function AboutPage() {
+export const metadata = generatePageMetadata(
+  'Projetos',
+  'Explore uma coleção de projetos que desenvolvi, desde automação de processos até análise avançada de dados e soluções empresariais.',
+  '/projects'
+)
+
+export default function ProjectsPage() {
+  const featuredProjects = projects.filter((project) => project.featured)
+  const otherProjects = projects.filter((project) => !project.featured)
+
   return (
     <div className="py-24">
       <div className="container max-w-screen-xl mx-auto px-4">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold">Sobre mim</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">Meus Projetos</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {personalInfo.bio}
+            Uma coleção de soluções que desenvolvi para resolver problemas
+            reais, desde automação de processos até análise avançada de dados.
           </p>
-          <Button
-            size="lg"
-            className="mt-6"
-          >
-            <Download className="mr-2 h-4 w-4" />
-            Download CV
-          </Button>
         </div>
 
-        {/* Experience Section */}
-        <section className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <Briefcase className="h-6 w-6 text-primary" />
-            <h2 className="text-3xl font-bold">Experiência Profissional</h2>
-          </div>
+        {/* Featured Projects */}
+        {featuredProjects.length > 0 && (
+          <section className="mb-20">
+            <div className="flex items-center gap-3 mb-8">
+              <Star className="h-6 w-6 text-primary" />
+              <h2 className="text-3xl font-bold">Projetos em Destaque</h2>
+            </div>
 
-          <div className="space-y-8">
-            {experiences.map((experience, index) => (
-              <Card
-                key={experience.id}
-                className="hover:border-primary/50 transition-colors animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader>
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                    <div className="space-y-2">
-                      <CardTitle className="text-xl">
-                        {experience.position}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredProjects.map((project, index) => (
+                <Card
+                  key={project.id}
+                  className="group hover:border-primary/50 transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="group-hover:text-primary transition-colors">
+                        {project.title}
                       </CardTitle>
-                      <CardDescription className="flex items-center gap-2 text-base font-medium">
-                        <MapPin className="h-4 w-4" />
-                        {experience.company}
-                      </CardDescription>
+                      <Star className="h-5 w-5 text-primary fill-primary" />
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">
-                      <Calendar className="h-4 w-4" />
-                      {formatDateRange(
-                        experience.startDate,
-                        experience.endDate
-                      )}
-                    </div>
-                  </div>
-                </CardHeader>
+                    <CardDescription className="text-muted-foreground">
+                      {project.description}
+                    </CardDescription>
+                  </CardHeader>
 
-                <CardContent>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {experience.description}
-                  </p>
-
-                  {experience.achievements && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3 text-primary">
-                        Principais conquistas:
-                      </h4>
-                      <ul className="space-y-2">
-                        {experience.achievements.map((achievement, i) => (
-                          <li
-                            key={i}
-                            className="text-sm text-muted-foreground flex items-start"
-                          >
-                            <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
-                            {achievement}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-sm">
-                      Tecnologias utilizadas:
-                    </h4>
+                  <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      {experience.technologies.map((tech) => (
+                      {project.technologies.map((tech) => (
                         <Badge
                           key={tech}
                           variant="secondary"
+                          className="text-xs"
                         >
                           {tech}
                         </Badge>
                       ))}
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Education Section */}
-        <section className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <GraduationCap className="h-6 w-6 text-primary" />
-            <h2 className="text-3xl font-bold">Formação Acadêmica</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {education.map((edu, index) => (
-              <Card
-                key={edu.id}
-                className="hover:border-primary/50 transition-colors animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader>
-                  <CardTitle className="text-lg">{edu.degree}</CardTitle>
-                  <CardDescription>{edu.field}</CardDescription>
-                </CardHeader>
-
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <MapPin className="h-4 w-4" />
-                      {edu.institution}
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      {formatDateRange(edu.startDate, edu.endDate)}
-                    </div>
-                    {edu.description && (
-                      <p className="text-sm text-muted-foreground">
-                        {edu.description}
-                      </p>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Courses Section */}
-        <section>
-          <div className="flex items-center gap-3 mb-8">
-            <Award className="h-6 w-6 text-primary" />
-            <h2 className="text-3xl font-bold">Cursos e Certificações</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {courses.map((course, index) => (
-              <Card
-                key={course.id}
-                className="hover:border-primary/50 transition-colors animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader>
-                  <CardTitle className="text-lg">{course.name}</CardTitle>
-                  <CardDescription className="flex items-center justify-between">
-                    <span>{course.provider}</span>
-                    <span className="text-xs bg-secondary px-2 py-1 rounded">
-                      {formatDate(course.completionDate)}
-                    </span>
-                  </CardDescription>
-                </CardHeader>
-
-                {course.description && (
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      {course.description}
-                    </p>
                   </CardContent>
-                )}
-              </Card>
-            ))}
-          </div>
-        </section>
+
+                  <CardFooter className="flex justify-between">
+                    <div className="flex gap-2">
+                      {project.githubUrl && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          asChild
+                        >
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="h-4 w-4 mr-2" />
+                            Código
+                          </a>
+                        </Button>
+                      )}
+                      {project.liveUrl && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          asChild
+                        >
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Demo
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Other Projects */}
+        {otherProjects.length > 0 && (
+          <section>
+            <h2 className="text-3xl font-bold mb-8">Outros Projetos</h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {otherProjects.map((project, index) => (
+                <Card
+                  key={project.id}
+                  className="group hover:border-primary/50 transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardHeader>
+                    <CardTitle className="group-hover:text-primary transition-colors">
+                      {project.title}
+                    </CardTitle>
+                    <CardDescription className="text-muted-foreground">
+                      {project.description}
+                    </CardDescription>
+                  </CardHeader>
+
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.slice(0, 4).map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="text-xs"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                      {project.technologies.length > 4 && (
+                        <Badge
+                          variant="outline"
+                          className="text-xs"
+                        >
+                          +{project.technologies.length - 4}
+                        </Badge>
+                      )}
+                    </div>
+                  </CardContent>
+
+                  <CardFooter className="flex justify-between">
+                    <div className="flex gap-2">
+                      {project.githubUrl && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          asChild
+                        >
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="h-4 w-4" />
+                          </a>
+                        </Button>
+                      )}
+                      {project.liveUrl && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          asChild
+                        >
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   )
