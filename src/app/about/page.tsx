@@ -21,7 +21,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
   'Sobre',
-  'Conheça minha trajetória profissional, formação acadêmica e experiências em desenvolvimento, ciência de dados e análise de riscos.',
+  'Conheça minha trajetória profissional, formação acadêmica e experiências em desenvolvimento, ciência de dados e automação de processos.',
   '/about'
 )
 

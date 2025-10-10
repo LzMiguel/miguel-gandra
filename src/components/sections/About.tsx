@@ -29,12 +29,6 @@ const skills = [
     skills: ['Dashboard', 'KPIs', 'Reporting', 'Automation', 'Process Mapping'],
     color: 'text-primary',
   },
-  {
-    category: 'Risk Management',
-    icon: Shield,
-    skills: ['Risk Assessment', 'Compliance', 'Internal Audit', 'CIPA', 'NR5'],
-    color: 'text-accent',
-  },
 ]
 
 export function AboutSection() {
@@ -72,7 +66,7 @@ export function AboutSection() {
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                  Análise e avaliação de riscos corporativos
+                  Análise e avaliação de processos para otimização contínua
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-primary rounded-full mr-3" />
@@ -80,7 +74,11 @@ export function AboutSection() {
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                  Auditoria interna e compliance regulatório
+                  Análise de dados e estatísticas aplicadas a negócios
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-primary rounded-full mr-3" />
+                  Criação de soluções personalizadas para desafios únicos
                 </li>
               </ul>
             </div>
@@ -130,19 +128,19 @@ export function AboutSection() {
             </div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl font-bold gradient-text">50+</div>
+            <div className="text-3xl font-bold gradient-text">20+</div>
             <div className="text-sm text-muted-foreground">
               Projetos concluídos
             </div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl font-bold gradient-text">20+</div>
+            <div className="text-3xl font-bold gradient-text">10+</div>
             <div className="text-sm text-muted-foreground">
               Automações criadas
             </div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl font-bold gradient-text">200+</div>
+            <div className="text-3xl font-bold gradient-text">700+</div>
             <div className="text-sm text-muted-foreground">
               Horas economizadas
             </div>

@@ -107,8 +107,8 @@ export function Footer() {
 
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
           <p>
-            &copy; {new Date().getFullYear()} Luiz Miguel Oliveira. Todos os
-            direitos reservados.
+            &copy; {new Date().getFullYear()} Miguel Gandra. Todos os direitos
+            reservados.
           </p>
         </div>
       </div>

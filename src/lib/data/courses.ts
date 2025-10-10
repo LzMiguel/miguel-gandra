@@ -3,50 +3,26 @@ import { Course } from '@/types'
 export const courses: Course[] = [
   {
     id: 'course-1',
-    name: 'Auditoria Interna e Gestão de Riscos',
-    provider: 'IBGC - Instituto Brasileiro de Governança Corporativa',
-    completionDate: '2024-09',
+    name: 'Web Moderno',
+    provider: 'Cod3r',
+    completionDate: '2025-10',
     description:
-      'Curso avançado em procedimentos de auditoria interna, avaliação de riscos empresariais e frameworks de compliance.',
+      'Curso avançado em desenvolvimento web, abordando HTML, CSS, JavaScript e frameworks modernos.',
   },
   {
     id: 'course-2',
-    name: 'Segurança do Trabalho - NR5 e CIPA',
-    provider: 'FUNDACENTRO',
-    completionDate: '2024-08',
+    name: 'Fundamentos de Linguagem Python - Do Básico a Aplicações de IA',
+    provider: 'Data Science Academy',
+    completionDate: '2025-11',
     description:
-      'Especialização em normas regulamentadoras brasileiras, comissões internas de prevenção de acidentes e gestão de segurança ocupacional.',
+      'Curso completo de Python, desde os fundamentos até aplicações práticas em inteligência artificial.',
   },
   {
     id: 'course-3',
-    name: 'Supply Chain Management e Logística',
-    provider: 'FGV - Fundação Getúlio Vargas',
-    completionDate: '2024-07',
+    name: 'Formação Cientista de Dados: O Curso Completo - 2025',
+    provider: 'Fernando Amaral',
+    completionDate: '2025-11',
     description:
-      'Gestão da cadeia de suprimentos, modelo SCOR, MRP, otimização de inventário e melhores práticas logísticas.',
-  },
-  {
-    id: 'course-4',
-    name: 'Python para Data Science',
-    provider: 'Alura',
-    completionDate: '2024-05',
-    description:
-      'Desenvolvimento em Python aplicado à ciência de dados, pandas, numpy, matplotlib e machine learning.',
-  },
-  {
-    id: 'course-5',
-    name: 'Power BI Avançado',
-    provider: 'Microsoft Learning',
-    completionDate: '2024-03',
-    description:
-      'Criação de dashboards interativos, modelagem de dados, DAX e integração com múltiplas fontes de dados.',
-  },
-  {
-    id: 'course-6',
-    name: 'VBA Expert - Automação Avançada',
-    provider: 'Udemy',
-    completionDate: '2023-11',
-    description:
-      'Programação VBA avançada, automação de processos complexos, integração com APIs e desenvolvimento de add-ins.',
+      'Da Estatística a Agente de Inteligência Artificial, Domine a Ciência de Dados e Seja um Profissional Super Qualificado!',
   },
 ]

@@ -32,7 +32,7 @@ export function HeroSection() {
           </div>
 
           {/* Status Badge */}
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <Badge
               variant="outline"
               className="px-4 py-2"
@@ -40,12 +40,12 @@ export function HeroSection() {
               <div className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse" />
               Disponível para novos projetos
             </Badge>
-          </div>
+          </div> */}
 
           {/* Main heading */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              Olá, eu sou <span className="gradient-text">Luiz Miguel</span>
+              Olá, eu sou <span className="gradient-text">Miguel Gandra</span>
             </h1>
             <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-medium">
               {personalInfo.title}
@@ -59,10 +59,7 @@ export function HeroSection() {
               automação de processos
             </span>
             ,
-            <span className="text-accent font-semibold">
-              {' '}
-              análise de riscos
-            </span>{' '}
+            <span className="text-accent font-semibold"> análise de dados</span>{' '}
             e
             <span className="text-primary font-semibold">
               {' '}
@@ -80,7 +77,7 @@ export function HeroSection() {
               'Excel',
               'Power BI',
               'Data Science',
-              'Risk Analysis',
+              'JavaScript',
             ].map((tech) => (
               <Badge
                 key={tech}

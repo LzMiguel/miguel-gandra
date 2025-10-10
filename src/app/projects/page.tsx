@@ -14,7 +14,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
   'Projetos',
-  'Explore uma coleção de projetos que desenvolvi, desde automação de processos até análise avançada de dados e soluções empresariais.',
+  'Explore uma coleção de projetos que desenvolvi, desde automação de processos até análises de dados e soluções empresariais.',
   '/projects'
 )
 

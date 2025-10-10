@@ -43,10 +43,10 @@ export function Header() {
             className="mr-6 flex items-center space-x-2"
           >
             <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-background font-bold text-sm">LM</span>
+              <span className="text-background font-bold text-sm">MG</span>
             </div>
             <span className="hidden font-bold sm:inline-block gradient-text text-lg">
-              Luiz Miguel
+              Miguel Gandra
             </span>
           </Link>
           <nav className="flex items-center gap-6 text-sm">
@@ -86,9 +86,9 @@ export function Header() {
               className="flex items-center space-x-2 md:hidden"
             >
               <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-background font-bold text-sm">LM</span>
+                <span className="text-background font-bold text-sm">MG</span>
               </div>
-              <span className="font-bold gradient-text">Luiz Miguel</span>
+              <span className="font-bold gradient-text">Miguel Gandra</span>
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-2">

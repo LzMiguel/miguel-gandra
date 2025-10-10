@@ -14,7 +14,7 @@ export const defaultMetadata: Metadata = {
     'Excel',
     'Python',
     'automação',
-    'análise de riscos',
+    'análise de dados',
     'portfolio',
     'Power BI',
     'data science',
@@ -25,15 +25,10 @@ export const defaultMetadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://luizmiguel-portfolio.vercel.app',
+    url: 'https://miguel-gandra.vercel.app',
     title: `${personalInfo.name} - ${personalInfo.title}`,
     description: personalInfo.bio,
     siteName: `Portfolio - ${personalInfo.name}`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `${personalInfo.name} - ${personalInfo.title}`,
-    description: personalInfo.bio,
   },
   robots: {
     index: true,
@@ -59,7 +54,7 @@ export function generatePageMetadata(
     openGraph: {
       title: `${title} | ${personalInfo.name}`,
       description: description || personalInfo.bio,
-      url: `https://luizmiguel-portfolio.vercel.app${path || ''}`,
+      url: `https://miguel-gandra.vercel.app${path || ''}`,
     },
     twitter: {
       title: `${title} | ${personalInfo.name}`,

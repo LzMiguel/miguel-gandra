@@ -12,7 +12,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
   'Contato',
-  'Entre em contato para discutir projetos, colaborações ou oportunidades em desenvolvimento e ciência de dados.',
+  'Entre em contato para discutir projetos, colaborações ou oportunidades em desenvolvimento.',
   '/contact'
 )
 
@@ -25,7 +25,7 @@ export default function ContactPage() {
           <h1 className="text-4xl md:text-5xl font-bold">Entre em contato</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Tem algum projeto interessante? Vamos conversar sobre como posso
-            ajudar a transformar suas ideias em soluções inovadoras.
+            ajudar a transformar suas ideias em soluções .
           </p>
         </div>
 
