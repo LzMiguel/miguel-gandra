@@ -9,7 +9,7 @@ export function Footer() {
           <div className="space-y-3">
             <div className="flex items-center space-x-2">
               <div className="h-6 w-6 rounded bg-primary" />
-              <span className="font-bold gradient-text">Luiz Miguel</span>
+              <span className="font-bold gradient-text">Miguel Gandra</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Desenvolvedor e Cientista de Dados apaixonado por criar soluções
